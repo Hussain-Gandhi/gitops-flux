@@ -1,0 +1,13 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta2
+kind: Provider
+metadata:
+  name: discord
+  namespace: hussain-flux
+spec:
+  channel: gitops-flux
+  secretRef:
+    name: discord
+  type: discord
+  username: FluxBot
+
