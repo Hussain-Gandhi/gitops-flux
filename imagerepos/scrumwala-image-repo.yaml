@@ -1,0 +1,10 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: scrumwala
+  namespace: hussain-flux
+spec:
+  image: docker.io/hussaingandhi/scrumwala
+  interval: 5m0s
+
