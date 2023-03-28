@@ -9,5 +9,5 @@ spec:
     name: scrumwala
   policy:
     semver:
-      range: '>=3.0'
+      range: '>=3.0.x'
 
