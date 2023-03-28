@@ -5,7 +5,7 @@ metadata:
   name: mattermost
   namespace: hussain-flux
 spec:
-  channel: gitops-flux
+  channel: technocrats-flux
   secretRef:
     name: mattermost
   type: slack
