@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: scrumwala
+  namespace: hussain-flux
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  secretRef:
+    name: gitops-deploy-auth
+  url: ssh://git@github.com/Hussain-Gandhi/gitops-deploy.git
+
