@@ -52,12 +52,6 @@ spec:
         type: ""
       ingress:
         enabled: false
-      #   hosts:
-      #   - host: hussain.technocrates.devops
-      #     paths:
-      #     - path: /
-      #       pathType: Prefix
-      #       servicePort: 8081
       name: scrumwala
       service:
         ports:
