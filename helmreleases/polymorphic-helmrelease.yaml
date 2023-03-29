@@ -59,3 +59,9 @@ spec:
           port: 8081
           protocol: TCP
           targetPort: 8081
+  install:
+    remediation:
+      retries: 2
+  upgrade:
+    remediation:
+      retries: 2
