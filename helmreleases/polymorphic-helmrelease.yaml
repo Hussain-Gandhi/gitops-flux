@@ -50,8 +50,8 @@ spec:
         enabled: false
         path: ""
         type: ""
-      # ingress:
-      #   enabled: true
+      ingress:
+        enabled: true
       #   hosts:
       #   - host: hussain.technocrates.devops
       #     paths:
