@@ -1,0 +1,68 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: polymorphic
+  namespace: hussain-flux-helm
+spec:
+  chart:
+    spec:
+      chart: polymorphic-app
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: polymorphic
+  interval: 1m0s
+  values:
+    env:
+    - name: APP_KEY
+      value: d9iwGCkB7OzSGf7JTY5zjMZgRitC8qed
+    - name: DB_HOST
+      value: db-mariadb
+    - name: DB_DATABASE
+      value: forge
+    - name: DB_USERNAME
+      value: toor
+    - name: DB_PASSWORD
+      value: toor
+    image:
+      repository: hussaingandhi/scrumwala
+      tag: "3.0"
+    jobs:
+    - args:
+      - php artisan migrate --force
+      command:
+      - /bin/sh
+      - -c
+      name: migrate
+    serviceTemplate:
+      healthcheck:
+        enabled: false
+        path: ""
+        type: ""
+    services:
+    - args:
+      - php artisan serve --host 0.0.0.0 --port 8081
+      command:
+      - /bin/sh
+      - -c
+      healthcheck:
+        enabled: false
+        path: ""
+        type: ""
+      ingress:
+        enabled: true
+        hosts:
+        - host: hussain.technocrates.devops
+          paths:
+          - path: /
+            pathType: Prefix
+            servicePort: 8081
+      name: scrumwala
+      service:
+        ports:
+        - name: http
+          port: 8081
+          protocol: TCP
+          targetPort: 8081
+

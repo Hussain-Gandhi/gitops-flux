@@ -15,6 +15,10 @@ spec:
     name: '*'
   - kind: HelmRepository
     name: '*'
+  - kind: HelmRelease
+    name: '*'
+  - kind: HelmChart
+    name: '*'
   providerRef:
     name: mattermost
 
