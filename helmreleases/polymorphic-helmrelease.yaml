@@ -59,4 +59,3 @@ spec:
           port: 8081
           protocol: TCP
           targetPort: 8081
-
