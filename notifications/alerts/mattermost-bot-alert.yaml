@@ -13,6 +13,8 @@ spec:
     name: '*'
   - kind: ImagePolicy
     name: '*'
+  - kind: HelmRepository
+    name: '*'
   providerRef:
     name: mattermost
 
