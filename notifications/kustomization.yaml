@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - alerts/mattermost-bot-alert-helm.yaml
 - alerts/mattermost-bot-alert.yaml
+- providers/mattermost-provider-helm.yaml
 - providers/mattermost-provider.yaml

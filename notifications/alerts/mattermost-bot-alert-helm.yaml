@@ -20,4 +20,4 @@ spec:
   - kind: HelmChart
     name: '*'
   providerRef:
-    name: hussain-flux/mattermost
+    name: mattermost
